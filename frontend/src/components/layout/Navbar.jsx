@@ -69,8 +69,8 @@ export default function Navbar({ activeSection = 'home', onOpenContact }) {
             : 'bg-white/95 backdrop-blur-sm py-3 sm:py-4 border-b border-slate-100'
         }`}
       >
-        {/* Top Gradient Scroll Progress Line - Visible as you scroll down */}
-        <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-transparent overflow-hidden pointer-events-none">
+        {/* Top Gradient Scroll Progress Line - Mobile only, hidden on desktop and laptop */}
+        <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-transparent overflow-hidden pointer-events-none lg:hidden">
           <div
             className="h-full bg-gradient-to-r from-[#8B5CF6] via-[#a855f7] to-[#ec4899] transition-all duration-75 ease-out shadow-[0_0_10px_rgba(139,92,246,0.6)]"
             style={{ width: `${scrollProgress}%` }}
