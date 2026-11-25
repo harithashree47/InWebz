@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from './Hero';
+import DemoBanner from './DemoBanner';
 import Highlights from './Highlights';
 import About from './About';
 import Services from './Services';
@@ -24,6 +25,9 @@ export default function HomePage({ onOpenContact }) {
     <div className="flex flex-col w-full">
       {/* 02. HERO SECTION */}
       <Hero onBuildTogether={scrollToContact} />
+
+      {/* DEMO OFFER BANNER */}
+      <DemoBanner onBookDemo={scrollToContact} />
 
       {/* 03. COMPANY HIGHLIGHTS */}
       <Highlights />
