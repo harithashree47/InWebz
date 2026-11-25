@@ -83,9 +83,9 @@ export default function Highlights() {
     <section
       id="highlights"
       ref={sectionRef}
-      className="relative py-20 sm:py-28 overflow-hidden bg-gradient-to-b from-slate-50/80 via-violet-50/30 to-slate-50/70 w-full border-y border-slate-100"
+      className="relative pt-20 sm:pt-28 pb-24 sm:pb-32 overflow-hidden bg-[#f4f5f7] w-full border-t border-slate-200/60"
     >
-      <div className="w-full px-3 sm:px-5 lg:px-6">
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
         <FadeIn delay={1}>
           <div className="max-w-3xl mb-14 text-center mx-auto px-2">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-[#090e1a] tracking-tight leading-[1.18]">
@@ -93,51 +93,55 @@ export default function Highlights() {
               <span className="text-[#8B5CF6] font-bold">Not Just Milestones</span>
             </h2>
 
-            <p className="text-base sm:text-lg text-[#1e293b] font-normal leading-relaxed mt-4">
+            <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed mt-4">
               Trusted by startups and growing enterprises to ship digital products that perform at scale.
             </p>
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 max-w-7xl mx-auto">
-          {STATS.map((stat, idx) => {
-            const Icon = stat.Icon;
-            return (
-              <FadeIn
-                key={idx}
-                delay={idx + 1}
-                className="h-full"
-              >
-                <div className="relative h-full bg-white/75 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-7 sm:p-8 border border-white/80 ring-1 ring-slate-200/60 shadow-[0_14px_38px_-10px_rgba(15,23,42,0.12),0_4px_14px_-4px_rgba(139,92,246,0.1),inset_0_1px_0_0_rgba(255,255,255,0.95)] hover:bg-white/90 hover:ring-violet-200/80 hover:shadow-[0_24px_50px_-12px_rgba(139,92,246,0.24),0_10px_24px_-6px_rgba(15,23,42,0.1),inset_0_1px_0_0_rgba(255,255,255,1)] hover:-translate-y-1.5 transition-all duration-300 ease-out flex flex-col justify-between group overflow-hidden">
-                  <div className="pointer-events-none absolute -top-12 -right-12 h-32 w-32 rounded-full bg-violet-100/60 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <FadeIn delay={2}>
+          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
+            {STATS.map((stat, idx) => {
+              const Icon = stat.Icon;
+              const rawCount = counts[idx];
+              const hasPlus = rawCount.endsWith('+');
+              const numericPart = hasPlus ? rawCount.slice(0, -1) : rawCount;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white rounded-3xl px-6 py-7 border border-white shadow-[0_18px_24px_-10px_rgba(15,23,42,0.22),0_4px_10px_-4px_rgba(15,23,42,0.06)] hover:-translate-y-1.5 hover:shadow-[0_24px_32px_-10px_rgba(139,92,246,0.28),0_8px_16px_-4px_rgba(15,23,42,0.08)] transition-all duration-300 flex items-center justify-center gap-4 group"
+                >
+                  <Icon className="h-8 w-8 sm:h-9 sm:w-9 text-[#8B5CF6] stroke-[1.6] shrink-0 group-hover:scale-110 transition-transform duration-300" />
 
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-between mb-7">
-                      <div className="h-12 w-12 rounded-2xl bg-violet-50/90 border border-violet-100/80 text-[#8B5CF6] flex items-center justify-center shadow-[0_4px_12px_-2px_rgba(139,92,246,0.12)] group-hover:bg-[#8B5CF6] group-hover:text-white group-hover:border-[#8B5CF6] group-hover:shadow-[0_8px_20px_-4px_rgba(139,92,246,0.4)] group-hover:scale-105 transition-all duration-300">
-                        <Icon className="h-5 w-5 stroke-[1.9]" />
-                      </div>
-                      <span className="text-xs font-mono font-semibold text-slate-300 group-hover:text-violet-400 transition-colors duration-300">
-                        {String(idx + 1).padStart(2, '0')}
-                      </span>
+                  <div className="text-left">
+                    <div className="text-2xl sm:text-3xl font-extrabold font-heading tracking-tight text-[#090e1a] tabular-nums leading-none">
+                      {numericPart}
+                      {hasPlus && <span className="text-[#8B5CF6]">+</span>}
                     </div>
-
-                    <div className="text-4xl sm:text-5xl font-extrabold font-heading tracking-tight bg-gradient-to-r from-[#8B5CF6] via-[#7c3aed] to-[#6366f1] bg-clip-text text-transparent tabular-nums mb-2">
-                      {counts[idx]}
-                    </div>
-
-                    <h3 className="text-lg sm:text-xl font-bold font-heading text-indigo-950 group-hover:text-[#8B5CF6] transition-colors duration-300 mb-2">
+                    <div className="text-xs sm:text-sm font-medium text-slate-500 mt-1 leading-snug">
                       {stat.label}
-                    </h3>
-
-                    <p className="text-sm text-slate-600 leading-relaxed font-normal">
-                      {stat.desc}
-                    </p>
+                    </div>
                   </div>
                 </div>
-              </FadeIn>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </FadeIn>
+      </div>
+
+      {/* Repeating Scalloped Wave Bottom Divider */}
+      <div className="pointer-events-none absolute -bottom-px left-0 w-full h-7 overflow-hidden leading-none">
+        <svg className="w-full h-full block" aria-hidden="true">
+          <defs>
+            <pattern id="impactScallopWave" width="64" height="29" patternUnits="userSpaceOnUse">
+              <path
+                d="M0,29 L0,14 Q16,0 32,14 Q48,28 64,14 L64,29 Z"
+                fill="#ffffff"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="29" fill="url(#impactScallopWave)" />
+        </svg>
       </div>
     </section>
   );
