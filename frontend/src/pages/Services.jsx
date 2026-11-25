@@ -14,100 +14,117 @@ const SERVICES = [
   {
     id: 'web-dev',
     title: 'Web Development',
-    description:
-      'Building high-performance websites that combine exceptional design, seamless functionality and scalable architecture.',
+    description: 'High-performance websites with modern design and scalable architecture.',
     icon: Globe,
+    iconColor: 'text-[#8B5CF6]',
   },
   {
     id: 'mobile-app',
     title: 'Mobile App Development',
-    description:
-      'Creating intuitive mobile applications that connect people, simplify interactions and enhance everyday experiences.',
+    description: 'Intuitive iOS and Android apps built for everyday experiences.',
     icon: Smartphone,
+    iconColor: 'text-sky-500',
   },
   {
     id: 'ui-ux',
     title: 'UI/UX Design',
-    description:
-      'Transforming complex ideas into elegant interfaces and effortless user experiences through thoughtful design.',
+    description: 'Elegant interfaces and effortless user journeys crafted with precision.',
     icon: PenTool,
+    iconColor: 'text-pink-500',
   },
   {
     id: 'ecommerce',
     title: 'E-Commerce Development',
-    description:
-      'Crafting powerful online shopping experiences that strengthen brands and create meaningful customer connections.',
+    description: 'High-converting online stores that strengthen your brand.',
     icon: ShoppingCart,
+    iconColor: 'text-emerald-500',
   },
   {
     id: 'custom-software',
     title: 'Custom Software Development',
-    description:
-      'Engineering tailored software solutions that align with your business goals and evolving operational needs.',
+    description: 'Tailored software engineered around your business workflows.',
     icon: Cpu,
+    iconColor: 'text-indigo-500',
   },
   {
     id: 'web-apps',
     title: 'Web Application Development',
-    description:
-      'Developing intelligent, scalable web applications that streamline workflows and accelerate business growth.',
+    description: 'Intelligent, scalable web apps that accelerate business growth.',
     icon: Layers,
+    iconColor: 'text-amber-500',
   },
   {
     id: 'digital-solutions',
     title: 'Digital Solutions',
-    description:
-      'Delivering technology-driven solutions that help businesses adapt, innovate and thrive in a digital-first world.',
+    description: 'Technology-driven solutions to innovate and thrive digitally.',
     icon: Sparkles,
+    iconColor: 'text-rose-500',
   },
 ];
 
 export default function Services({ onSelectService }) {
   return (
-    <section id="services" className="relative py-20 sm:py-28 overflow-hidden bg-white w-full border-t border-slate-100">
+    <section id="services" className="relative pt-24 sm:pt-32 pb-20 sm:pb-28 overflow-hidden bg-[#f4f5f7] w-full">
+      {/* Repeating Scalloped Wave Top Divider (matches Impact bottom wave) */}
+      <div className="pointer-events-none absolute -top-px left-0 w-full h-7 overflow-hidden leading-none">
+        <svg className="w-full h-full block" aria-hidden="true">
+          <defs>
+            <pattern id="servicesTopScallopWave" width="64" height="29" patternUnits="userSpaceOnUse">
+              <path
+                d="M0,0 L0,15 Q16,29 32,15 Q48,1 64,15 L64,0 Z"
+                fill="#ffffff"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="29" fill="url(#servicesTopScallopWave)" />
+        </svg>
+      </div>
+
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
-        {/* Section Header */}
+        {/* Section Header (matching Get to Know Inwebzz style) */}
         <div className="max-w-3xl mb-14 text-left">
-          <div className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#8B5CF6] font-mono flex items-center gap-2 mb-3">
-            <span className="h-1.5 w-6 rounded-full bg-[#8B5CF6] inline-block" />
-            WHAT WE DO BEST
+          <div className="inline-block mb-4">
+            <span className="text-base sm:text-lg font-bold font-heading text-[#090e1a] tracking-tight">
+              What We Do Best
+            </span>
+            <span className="block h-[2.5px] w-24 bg-[#8B5CF6] rounded-full mt-1.5" />
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-[#090e1a] tracking-tight leading-[1.18]">
+          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold font-heading text-[#090e1a] tracking-tight leading-[1.18]">
             Engineering Ideas.{' '}
-            <span className="text-[#8B5CF6] font-bold">Elevating Businesses.</span>
+            <span className="block mt-1 text-[#8B5CF6]">
+              Elevating Businesses.
+            </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-[#1e293b] font-normal leading-relaxed mt-4">
+          <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed mt-4 max-w-xl">
             We combine creative thinking with technical expertise to deliver digital solutions that solve real challenges and unlock new opportunities.
           </p>
         </div>
 
-        {/* 7 Services Grid on clean white cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {/* 7 Services Grid (matching Impact card style & shadow) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-7">
           {SERVICES.map((srv) => {
             const Icon = srv.icon;
             return (
               <div
                 key={srv.id}
                 onClick={() => onSelectService && onSelectService(srv)}
-                className="bg-white rounded-2xl sm:rounded-3xl p-7 sm:p-8 border border-slate-200/80 shadow-soft-card hover:border-violet-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between cursor-pointer group"
+                className="bg-white rounded-3xl p-7 border border-white shadow-[0_18px_24px_-10px_rgba(15,23,42,0.22),0_4px_10px_-4px_rgba(15,23,42,0.06)] hover:-translate-y-1.5 hover:shadow-[0_24px_32px_-10px_rgba(139,92,246,0.28),0_8px_16px_-4px_rgba(15,23,42,0.08)] transition-all duration-300 flex flex-col justify-between cursor-pointer group"
               >
                 <div>
-                  <div className="mb-6 p-3.5 rounded-2xl bg-violet-50 text-[#8B5CF6] group-hover:bg-[#8B5CF6] group-hover:text-white transition-colors duration-300 w-fit">
-                    <Icon className="h-7 w-7 stroke-[1.8]" />
-                  </div>
+                  <Icon className={`h-8 w-8 stroke-[1.6] mb-4 group-hover:scale-110 transition-transform duration-300 ${srv.iconColor}`} />
 
-                  <h3 className="text-xl font-bold font-heading text-slate-900 group-hover:text-[#8B5CF6] transition-colors mb-2.5">
+                  <h3 className="text-lg sm:text-xl font-bold font-heading text-[#090e1a] group-hover:text-[#8B5CF6] transition-colors mb-2">
                     {srv.title}
                   </h3>
 
-                  <p className="text-sm text-[#1e293b] leading-relaxed font-normal">
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-medium">
                     {srv.description}
                   </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#8B5CF6] group-hover:translate-x-1 transition-transform">
+                <div className="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#8B5CF6] group-hover:translate-x-1 transition-transform">
                   <span>Learn More</span>
                   <ArrowRight className="h-4 w-4" />
                 </div>
