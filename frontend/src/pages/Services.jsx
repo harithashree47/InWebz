@@ -81,13 +81,13 @@ export default function Services({ onSelectService }) {
       </div>
 
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
-        {/* Section Header (matching Get to Know Inwebzz style) */}
-        <div className="max-w-3xl mb-14 text-left">
+        {/* Section Header (centered) */}
+        <div className="max-w-3xl mb-14 text-center mx-auto">
           <div className="inline-block mb-4">
             <span className="text-base sm:text-lg font-bold font-heading text-[#090e1a] tracking-tight">
               What We Do Best
             </span>
-            <span className="block h-[2.5px] w-24 bg-[#8B5CF6] rounded-full mt-1.5" />
+            <span className="block h-[2.5px] w-24 bg-[#8B5CF6] rounded-full mt-1.5 mx-auto" />
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold font-heading text-[#090e1a] tracking-tight leading-[1.18]">
@@ -97,7 +97,7 @@ export default function Services({ onSelectService }) {
             </span>
           </h2>
 
-          <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed mt-4 max-w-xl">
+          <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed mt-4 max-w-xl mx-auto">
             We combine creative thinking with technical expertise to deliver digital solutions that solve real challenges and unlock new opportunities.
           </p>
         </div>

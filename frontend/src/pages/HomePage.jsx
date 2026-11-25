@@ -4,7 +4,6 @@ import DemoBanner from './DemoBanner';
 import Highlights from './Highlights';
 import About from './About';
 import Services from './Services';
-import WhyChooseUs from './WhyChooseUs';
 import Projects from './Projects';
 import Expertise from './Expertise';
 import Process from './Process';
@@ -37,9 +36,6 @@ export default function HomePage({ onOpenContact }) {
 
       {/* 05. OUR SERVICES */}
       <Services onSelectService={scrollToContact} />
-
-      {/* 06. WHY CHOOSE INWEBZZ? */}
-      <WhyChooseUs />
 
       {/* 07. OUR PROJECTS */}
       <Projects />
