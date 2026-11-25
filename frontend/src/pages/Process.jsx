@@ -40,10 +40,6 @@ export default function Process() {
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 text-center">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#8B5CF6] font-mono">
-            // OUR APPROACH
-          </div>
-
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-[#090e1a] tracking-tight leading-[1.18]">
             From First Thought{' '}
             <span className="text-[#8B5CF6] font-bold">To Final Execution.</span>
