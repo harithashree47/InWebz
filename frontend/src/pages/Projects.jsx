@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, ExternalLink, Eye, X } from 'lucide-react';
 import Button from '../components/common/Button';
+import FadeIn from '../components/common/FadeIn';
 
 const CATEGORIES = [
   { id: 'all', label: 'All' },
@@ -86,98 +87,103 @@ export default function Projects() {
     <section id="projects" className="relative py-20 sm:py-28 overflow-hidden bg-white w-full border-t border-slate-100">
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
         {/* Section Header */}
-        <div className="max-w-3xl mb-12 text-left">
-          <div className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#8B5CF6] font-mono flex items-center gap-2 mb-3">
-            <span className="h-1.5 w-6 rounded-full bg-[#8B5CF6] inline-block" />
-            SELECTED WORKS
+        <FadeIn delay={1} className="max-w-3xl mb-12 text-left">
+          <div className="inline-block mb-4">
+            <span className="text-base sm:text-lg font-bold font-heading text-[#090e1a] tracking-tight">
+              Our Portfolio
+            </span>
+            <span className="block h-[2.5px] w-24 bg-[#8B5CF6] rounded-full mt-1.5" />
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-[#090e1a] tracking-tight leading-[1.18]">
+          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold font-heading text-[#090e1a] tracking-tight leading-[1.18]">
             Crafted With Purpose.{' '}
-            <span className="text-[#8B5CF6] font-bold">Built To Make An Impact.</span>
+            <span className="block mt-1 text-[#8B5CF6]">
+              Built To Make An Impact.
+            </span>
           </h2>
 
           <p className="text-base sm:text-lg text-[#1e293b] font-normal leading-relaxed mt-4">
             Every project is an opportunity to challenge conventions, explore possibilities and create something extraordinary. Discover the digital experiences we've brought to life.
           </p>
-        </div>
+        </FadeIn>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center gap-2.5 mb-12">
-          {CATEGORIES.map((cat) => {
-            const isActive = activeCategory === cat.id;
-            return (
-              <button
-                key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-                className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-200 cursor-pointer ${
-                  isActive
-                    ? 'bg-[#8B5CF6] text-white shadow-md shadow-violet-500/25'
-                    : 'bg-white text-slate-800 border border-slate-200 hover:border-violet-300 hover:text-[#8B5CF6]'
-                }`}
-              >
-                {cat.label}
-              </button>
-            );
-          })}
-        </div>
+        <FadeIn delay={2}>
+          <div className="flex flex-wrap items-center gap-2.5 mb-12">
+            {CATEGORIES.map((cat) => {
+              const isActive = activeCategory === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-200 cursor-pointer ${
+                    isActive
+                      ? 'bg-[#8B5CF6] text-white shadow-md shadow-violet-500/25'
+                      : 'bg-white text-slate-800 border border-slate-200 hover:border-violet-300 hover:text-[#8B5CF6]'
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              );
+            })}
+          </div>
+        </FadeIn>
 
         {/* Projects Grid on clean white */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
-            <div
-              key={project.id}
-              className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-soft-card hover:border-violet-300 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group"
-            >
-              <div>
-                {/* Visual Preview */}
-                <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1 rounded-full text-xs font-bold text-[#8B5CF6] border border-slate-100 shadow-sm">
-                    {project.categoryLabel}
+          {filteredProjects.map((project, index) => (
+            <FadeIn key={project.id} delay={(index % 3) + 1} className="h-full">
+              <div className="h-full bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-soft-card hover:border-violet-300 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                  {/* Visual Preview */}
+                  <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1 rounded-full text-xs font-bold text-[#8B5CF6] border border-slate-100 shadow-sm">
+                      {project.categoryLabel}
+                    </div>
+                  </div>
+
+                  {/* Details */}
+                  <div className="p-7">
+                    <div className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider mb-1">
+                      {project.client}
+                    </div>
+                    <h3 className="text-xl font-bold font-heading text-slate-900 group-hover:text-[#8B5CF6] transition-colors leading-snug">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-[#1e293b] mt-2.5 leading-relaxed font-normal">
+                      {project.description}
+                    </p>
                   </div>
                 </div>
 
-                {/* Details */}
-                <div className="p-7">
-                  <div className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider mb-1">
-                    {project.client}
-                  </div>
-                  <h3 className="text-xl font-bold font-heading text-slate-900 group-hover:text-[#8B5CF6] transition-colors leading-snug">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-[#1e293b] mt-2.5 leading-relaxed font-normal">
-                    {project.description}
-                  </p>
+                {/* Action Buttons */}
+                <div className="p-7 pt-0 border-t border-slate-100 mt-4 flex items-center justify-between gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedModalProject(project)}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-[#8B5CF6] transition-colors cursor-pointer"
+                  >
+                    <Eye className="h-4 w-4 text-[#8B5CF6]" />
+                    <span>Discover The Details</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setSelectedModalProject(project)}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-violet-50 text-xs font-bold text-[#8B5CF6] hover:bg-[#8B5CF6] hover:text-white transition-all cursor-pointer"
+                  >
+                    <span>Explore Project</span>
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </button>
                 </div>
               </div>
-
-              {/* Action Buttons */}
-              <div className="p-7 pt-0 border-t border-slate-100 mt-4 flex items-center justify-between gap-3">
-                <button
-                  type="button"
-                  onClick={() => setSelectedModalProject(project)}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-[#8B5CF6] transition-colors cursor-pointer"
-                >
-                  <Eye className="h-4 w-4 text-[#8B5CF6]" />
-                  <span>Discover The Details</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setSelectedModalProject(project)}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-violet-50 text-xs font-bold text-[#8B5CF6] hover:bg-[#8B5CF6] hover:text-white transition-all cursor-pointer"
-                >
-                  <span>Explore Project</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </button>
-              </div>
-            </div>
+            </FadeIn>
           ))}
         </div>
 

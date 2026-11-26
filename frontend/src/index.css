@@ -121,3 +121,12 @@
   transition-delay: 600ms;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
