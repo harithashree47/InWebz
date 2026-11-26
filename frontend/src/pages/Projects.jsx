@@ -63,7 +63,7 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <FadeIn key={project.id} delay={(index % 3) + 1} className="h-full">
-              <div className="h-full bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-[0_14px_34px_-12px_rgba(15,23,42,0.1)] hover:border-violet-200 hover:shadow-[0_24px_44px_-12px_rgba(139,92,246,0.2)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+              <div className="h-full bg-white rounded-3xl overflow-hidden border border-slate-200/75 shadow-[0_18px_28px_-10px_rgba(15,23,42,0.2),0_4px_12px_-4px_rgba(15,23,42,0.06)] hover:border-violet-200 hover:shadow-[0_26px_44px_-10px_rgba(139,92,246,0.26),0_8px_18px_-4px_rgba(15,23,42,0.08)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                   {/* Visual Preview */}
                   <div
@@ -100,7 +100,7 @@ export default function Projects() {
                     <h3 className="text-xl sm:text-2xl font-bold font-heading text-[#090e1a] group-hover:text-[#8B5CF6] transition-colors leading-snug">
                       {project.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed font-normal">
+                    <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed font-normal line-clamp-2">
                       {project.description}
                     </p>
                   </div>

@@ -34,17 +34,21 @@ export default function Expertise() {
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
         {/* Section Header */}
         <div className="max-w-3xl mb-14 text-left">
-          <div className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#8B5CF6] font-mono flex items-center gap-2 mb-3">
-            <span className="h-1.5 w-6 rounded-full bg-[#8B5CF6] inline-block" />
-            OUR TECHNOLOGY ECOSYSTEM
+          <div className="inline-block mb-4">
+            <span className="text-base sm:text-lg font-bold font-heading text-[#090e1a] tracking-tight">
+              Our Technology Ecosystem
+            </span>
+            <span className="block h-[2.5px] w-24 bg-[#8B5CF6] rounded-full mt-1.5" />
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-[#090e1a] tracking-tight leading-[1.18]">
+          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold font-heading text-[#090e1a] tracking-tight leading-[1.18]">
             Driven By Innovation.{' '}
-            <span className="text-[#8B5CF6] font-bold">Powered By Technology.</span>
+            <span className="block mt-1 text-[#8B5CF6]">
+              Powered By Technology.
+            </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-[#1e293b] font-normal leading-relaxed mt-4">
+          <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed mt-4 max-w-2xl">
             We leverage modern frameworks, development tools and emerging technologies to engineer solutions that are reliable, adaptable and built for the future.
           </p>
         </div>
@@ -56,7 +60,7 @@ export default function Expertise() {
             return (
               <div
                 key={idx}
-                className="bg-white rounded-2xl sm:rounded-3xl p-7 border border-slate-200/80 hover:border-violet-300 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group shadow-soft-card"
+                className="bg-white rounded-2xl sm:rounded-3xl p-7 border border-slate-200/70 shadow-[0_18px_24px_-10px_rgba(15,23,42,0.18),0_4px_10px_-4px_rgba(15,23,42,0.06)] hover:border-violet-200 hover:-translate-y-1.5 hover:shadow-[0_24px_34px_-10px_rgba(139,92,246,0.24),0_8px_16px_-4px_rgba(15,23,42,0.08)] transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="p-3.5 rounded-2xl bg-violet-50 text-[#8B5CF6] mb-5 w-fit group-hover:scale-110 group-hover:bg-[#8B5CF6] group-hover:text-white transition-all">
