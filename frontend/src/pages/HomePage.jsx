@@ -7,7 +7,6 @@ import Services from './Services';
 import Projects from './Projects';
 import Expertise from './Expertise';
 import Process from './Process';
-import Team from './Team';
 import Testimonials from './Testimonials';
 import Faq from './Faq';
 import Contact from './Contact';
@@ -45,9 +44,6 @@ export default function HomePage({ onOpenContact }) {
 
       {/* 09. DEVELOPMENT PROCESS */}
       <Process />
-
-      {/* 10. OUR TEAM */}
-      <Team />
 
       {/* 11. TESTIMONIALS */}
       <Testimonials />
