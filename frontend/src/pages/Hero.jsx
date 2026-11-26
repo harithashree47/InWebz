@@ -1,22 +1,65 @@
-import React from 'react';
-import { ArrowRight, CheckCircle2, ShieldCheck, Zap } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, CheckCircle2, ShieldCheck, Star, Zap } from 'lucide-react';
 import Button from '../components/common/Button';
 import FadeIn from '../components/common/FadeIn';
 import Logo from '../components/common/Logo';
 
+const BG_BUBBLES = [
+  { id: 'bg-1', pos: 'top-24 left-[8%]', size: 'w-3 h-3', bubble: 'bg-[#7c3aed]/70', star: 'text-[#7c3aed] fill-[#7c3aed] h-4 w-4' },
+  { id: 'bg-2', pos: 'bottom-32 left-[34%]', size: 'w-4 h-4', bubble: 'bg-[#ddd6fe]', star: 'text-[#8B5CF6] fill-[#c4b5fd] h-5 w-5' },
+  { id: 'bg-3', pos: 'top-28 right-[14%]', size: 'w-2.5 h-2.5', bubble: 'bg-[#6366F1]/70', star: 'text-indigo-500 fill-indigo-400 h-4 w-4' },
+  { id: 'bg-4', pos: 'bottom-36 right-[6%]', size: 'w-4 h-4', bubble: 'bg-[#fca5a5]/70', star: 'text-amber-400 fill-amber-400 h-5 w-5' },
+];
+
+const CARD_BUBBLES = [
+  { id: 'card-1', pos: '-top-7 -left-6', size: 'w-3 h-3', bubble: 'bg-[#6D28D9] animate-float-slow', star: 'text-amber-400 fill-amber-400 h-4 w-4' },
+  { id: 'card-2', pos: '-top-5 right-10', size: 'w-2.5 h-2.5', bubble: 'bg-[#6366F1] animate-float-reverse', star: 'text-[#8B5CF6] fill-[#8B5CF6] h-4 w-4' },
+  { id: 'card-3', pos: '-bottom-6 -left-8', size: 'w-4 h-4', bubble: 'bg-[#7C3AED]/75 animate-float-reverse', star: 'text-violet-300 fill-violet-400 h-5 w-5' },
+  { id: 'card-4', pos: 'bottom-8 -right-8', size: 'w-3.5 h-3.5', bubble: 'bg-[#A78BFA]/80 animate-float-slow', star: 'text-amber-400 fill-amber-400 h-4 w-4' },
+];
+
+function InteractiveBubble({ item, isStarred, onToggle, className = '' }) {
+  return (
+    <button
+      type="button"
+      onClick={() => onToggle(item.id)}
+      aria-label={isStarred ? 'Reset star to bubble' : 'Turn bubble into star'}
+      className={`pointer-events-auto absolute ${item.pos} flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-125 focus:outline-none ${className}`}
+    >
+      {isStarred ? (
+        <Star className={`${item.star} drop-shadow-[0_4px_12px_rgba(139,92,246,0.45)] animate-[floatSlow_3s_ease-in-out_infinite] transition-all duration-300 scale-110`} />
+      ) : (
+        <span className={`block rounded-full transition-all duration-300 ${item.size} ${item.bubble}`} />
+      )}
+    </button>
+  );
+}
+
 export default function Hero({ onBuildTogether }) {
+  const [starredIds, setStarredIds] = useState({});
+
+  const toggleBubble = (id) => {
+    setStarredIds((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
   return (
     <section
       id="home"
       className="relative pt-28 sm:pt-36 lg:pt-40 pb-24 sm:pb-32 overflow-hidden bg-white w-full"
     >
       {/* Subtle modern dot matrix canvas overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:28px_28px] [mask-image:radial-gradient(ellipse_75%_55%_at_50%_20%,#000_60%,transparent_100%)] opacity-70" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:28px_28px] [mask-image:radial-gradient(ellipse_75%_55%_at_50%_20%,#000_60%,transparent_100%)] opacity-55" />
 
-      {/* Subtle floating Figma accent dots */}
-      <div className="pointer-events-none absolute top-28 left-[12%] w-2.5 h-2.5 rounded-full bg-[#8B5CF6]/30" />
-      <div className="pointer-events-none absolute bottom-32 left-[42%] w-3 h-3 rounded-full bg-[#8B5CF6]/25 blur-[1px]" />
-      <div className="pointer-events-none absolute top-36 right-[8%] w-3.5 h-3.5 rounded-full bg-[#6D28D9]/25" />
+      {/* Clickable Pastel Circles, Hollow Rings & Accent Dots Background */}
+      <div className="pointer-events-none hidden sm:block absolute inset-0 overflow-hidden z-10">
+        {BG_BUBBLES.map((item) => (
+          <InteractiveBubble
+            key={item.id}
+            item={item}
+            isStarred={Boolean(starredIds[item.id])}
+            onToggle={toggleBubble}
+          />
+        ))}
+      </div>
 
       <div className="relative z-10 w-full px-4 sm:px-8 lg:px-12 xl:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
@@ -185,14 +228,16 @@ export default function Hero({ onBuildTogether }) {
                 </div>
               </div>
 
-              {/* Floating Bokeh Bubbles & Crisp Dots (matching reference) */}
-              <div className="pointer-events-none absolute -top-10 -left-10 w-3 h-3 rounded-full bg-[#6D28D9] animate-float-slow z-20" />
-              <div className="pointer-events-none absolute -top-6 right-10 w-2.5 h-2.5 rounded-full bg-[#6366F1] animate-float-reverse z-20" />
-              <div className="pointer-events-none absolute top-10 -right-10 w-10 h-10 rounded-full bg-white/80 blur-[3px] shadow-[0_0_24px_rgba(255,255,255,0.9)] animate-float-slow z-20" />
-              <div className="pointer-events-none absolute top-1/3 -right-14 w-2 h-2 rounded-full bg-[#7C3AED] animate-pulse z-20" />
-              <div className="pointer-events-none absolute -bottom-6 -left-14 w-7 h-7 rounded-full bg-[#7C3AED]/75 blur-[3px] animate-float-reverse z-20" />
-              <div className="pointer-events-none absolute -bottom-10 left-10 w-9 h-9 rounded-full bg-slate-200/80 blur-[1px] animate-float-slow z-20" />
-              <div className="pointer-events-none absolute bottom-10 -right-12 w-8 h-8 rounded-full bg-slate-100/90 blur-[1px] animate-float-reverse z-20" />
+              {/* Clickable Floating Bokeh Bubbles & Crisp Dots */}
+              {CARD_BUBBLES.map((item) => (
+                <InteractiveBubble
+                  key={item.id}
+                  item={item}
+                  isStarred={Boolean(starredIds[item.id])}
+                  onToggle={toggleBubble}
+                  className="z-20"
+                />
+              ))}
               </div>
             </div>
           </FadeIn>
