@@ -83,18 +83,44 @@ export default function Hero({ onBuildTogether }) {
             </FadeIn>
           </div>
 
-          {/* Right Column: Original Inwebz Glass Showcase Card + Dot-Matrix Grid */}
-          <div className="lg:col-span-6 relative flex justify-center items-center py-6">
-            <div className="relative w-full max-w-[520px]">
-              {/* Dot-grid accents behind showcase */}
-              <div className="pointer-events-none absolute -top-6 -right-4 w-28 h-24 bg-[radial-gradient(#94a3b8_1.5px,transparent_1.5px)] [background-size:12px_12px] opacity-45" />
-              <div className="pointer-events-none absolute -bottom-6 -left-4 w-28 h-24 bg-[radial-gradient(#94a3b8_1.5px,transparent_1.5px)] [background-size:12px_12px] opacity-45" />
-
-              {/* Ambient Glow Aura */}
-              <div className="pointer-events-none absolute -inset-3 bg-gradient-to-tr from-[#8B5CF6]/20 via-[#a78bfa]/15 to-transparent rounded-3xl blur-2xl -z-10 transform -rotate-1" />
+          {/* Right Column: Original Inwebz Glass Showcase Card + Violet Blob & Bubbles */}
+          <FadeIn delay={3} className="lg:col-span-6">
+            <div className="relative flex justify-center items-center py-6">
+              <div className="relative w-full max-w-[520px]">
+                {/* Two-Tone Organic Violet Blob Behind Showcase */}
+                <svg
+                  viewBox="0 0 200 200"
+                  className="pointer-events-none absolute -inset-10 sm:-inset-14 w-[calc(100%+5rem)] sm:w-[calc(100%+7rem)] h-[calc(100%+5rem)] sm:h-[calc(100%+7rem)] -z-10 animate-float-slow"
+                  aria-hidden="true"
+                >
+                <defs>
+                  <linearGradient id="heroRightBlobBack" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#8B5CF6" />
+                    <stop offset="100%" stopColor="#6D28D9" />
+                  </linearGradient>
+                  <linearGradient id="heroRightBlobFront" x1="20%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#7C3AED" />
+                    <stop offset="100%" stopColor="#4C1D95" />
+                  </linearGradient>
+                </defs>
+                {/* Lighter Lavender-Violet Layer */}
+                <path
+                  fill="url(#heroRightBlobBack)"
+                  opacity="0.85"
+                  d="M44.6,-69.8C57.9,-62.3,68.8,-50.1,75.4,-35.9C82,-21.7,84.3,-5.5,81.4,9.8C78.5,25.1,70.4,39.5,59.1,51.2C47.8,62.9,33.3,71.9,17.3,76.3C1.3,80.7,-16.2,80.5,-31.8,74.1C-47.4,67.7,-61.1,55.1,-70.3,39.7C-79.5,24.3,-84.2,6.1,-80.7,-10.7C-77.2,-27.5,-65.5,-42.9,-51.4,-50.6C-37.3,-58.3,-20.8,-58.3,-4.1,-53.2C12.6,-48.1,31.3,-77.3,44.6,-69.8Z"
+                  transform="translate(96 98) scale(1.02)"
+                />
+                {/* Deeper Indigo-Violet Layer */}
+                <path
+                  fill="url(#heroRightBlobFront)"
+                  opacity="0.92"
+                  d="M47.7,-72.6C61.5,-64.2,72.2,-50.5,78.5,-35.1C84.8,-19.7,86.7,-2.6,83.1,13.4C79.5,29.4,70.4,44.3,58.1,55.9C45.8,67.5,30.3,75.8,13.6,79.4C-3.1,83,-21,81.9,-36.8,74.8C-52.6,67.7,-66.3,54.6,-74.2,38.7C-82.1,22.8,-84.2,4.1,-79.9,-13.1C-75.6,-30.3,-64.9,-46,-50.9,-54.7C-36.9,-63.4,-19.6,-65.1,-1.5,-63.2C16.6,-61.3,33.9,-81,47.7,-72.6Z"
+                  transform="translate(106 102) scale(0.95)"
+                />
+              </svg>
 
               {/* Main Glass Showcase Card */}
-              <div className="relative rounded-2xl bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.08)] overflow-hidden">
+              <div className="relative rounded-2xl bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.08)] overflow-hidden hover:-translate-y-1 transition-transform duration-500">
                 {/* Window Top Navigation Bar */}
                 <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-100 bg-slate-50/60">
                   <div className="flex items-center gap-2">
@@ -159,14 +185,17 @@ export default function Hero({ onBuildTogether }) {
                 </div>
               </div>
 
-              {/* Floating Circle Dots around the Showcase */}
-              <div className="pointer-events-none absolute -top-5 -right-3 w-7 h-7 rounded-full bg-[#8B5CF6]/25 border border-[#8B5CF6]/30 animate-float-slow z-20" />
-              <div className="pointer-events-none absolute -top-2 right-12 w-3.5 h-3.5 rounded-full bg-[#A78BFA]/70 z-20" />
-              <div className="pointer-events-none absolute top-1/2 -right-6 w-4 h-4 rounded-full bg-[#8B5CF6]/40 z-20" />
-              <div className="pointer-events-none absolute -bottom-5 -left-3 w-8 h-8 rounded-full bg-[#8B5CF6]/20 border border-[#8B5CF6]/25 animate-float-reverse z-20" />
-              <div className="pointer-events-none absolute -bottom-2 left-12 w-3.5 h-3.5 rounded-full bg-[#6D28D9]/45 z-20" />
+              {/* Floating Bokeh Bubbles & Crisp Dots (matching reference) */}
+              <div className="pointer-events-none absolute -top-10 -left-10 w-3 h-3 rounded-full bg-[#6D28D9] animate-float-slow z-20" />
+              <div className="pointer-events-none absolute -top-6 right-10 w-2.5 h-2.5 rounded-full bg-[#6366F1] animate-float-reverse z-20" />
+              <div className="pointer-events-none absolute top-10 -right-10 w-10 h-10 rounded-full bg-white/80 blur-[3px] shadow-[0_0_24px_rgba(255,255,255,0.9)] animate-float-slow z-20" />
+              <div className="pointer-events-none absolute top-1/3 -right-14 w-2 h-2 rounded-full bg-[#7C3AED] animate-pulse z-20" />
+              <div className="pointer-events-none absolute -bottom-6 -left-14 w-7 h-7 rounded-full bg-[#7C3AED]/75 blur-[3px] animate-float-reverse z-20" />
+              <div className="pointer-events-none absolute -bottom-10 left-10 w-9 h-9 rounded-full bg-slate-200/80 blur-[1px] animate-float-slow z-20" />
+              <div className="pointer-events-none absolute bottom-10 -right-12 w-8 h-8 rounded-full bg-slate-100/90 blur-[1px] animate-float-reverse z-20" />
+              </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </div>
 
