@@ -136,108 +136,108 @@ export default function Hero({ onBuildTogether }) {
                   className="pointer-events-none absolute -inset-10 sm:-inset-14 w-[calc(100%+5rem)] sm:w-[calc(100%+7rem)] h-[calc(100%+5rem)] sm:h-[calc(100%+7rem)] -z-10 animate-float-slow"
                   aria-hidden="true"
                 >
-                <defs>
-                  <linearGradient id="heroRightBlobBack" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#8B5CF6" />
-                    <stop offset="100%" stopColor="#6D28D9" />
-                  </linearGradient>
-                  <linearGradient id="heroRightBlobFront" x1="20%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#7C3AED" />
-                    <stop offset="100%" stopColor="#4C1D95" />
-                  </linearGradient>
-                </defs>
-                {/* Lighter Lavender-Violet Layer */}
-                <path
-                  fill="url(#heroRightBlobBack)"
-                  opacity="0.85"
-                  d="M44.6,-69.8C57.9,-62.3,68.8,-50.1,75.4,-35.9C82,-21.7,84.3,-5.5,81.4,9.8C78.5,25.1,70.4,39.5,59.1,51.2C47.8,62.9,33.3,71.9,17.3,76.3C1.3,80.7,-16.2,80.5,-31.8,74.1C-47.4,67.7,-61.1,55.1,-70.3,39.7C-79.5,24.3,-84.2,6.1,-80.7,-10.7C-77.2,-27.5,-65.5,-42.9,-51.4,-50.6C-37.3,-58.3,-20.8,-58.3,-4.1,-53.2C12.6,-48.1,31.3,-77.3,44.6,-69.8Z"
-                  transform="translate(96 98) scale(1.02)"
-                />
-                {/* Deeper Indigo-Violet Layer */}
-                <path
-                  fill="url(#heroRightBlobFront)"
-                  opacity="0.92"
-                  d="M47.7,-72.6C61.5,-64.2,72.2,-50.5,78.5,-35.1C84.8,-19.7,86.7,-2.6,83.1,13.4C79.5,29.4,70.4,44.3,58.1,55.9C45.8,67.5,30.3,75.8,13.6,79.4C-3.1,83,-21,81.9,-36.8,74.8C-52.6,67.7,-66.3,54.6,-74.2,38.7C-82.1,22.8,-84.2,4.1,-79.9,-13.1C-75.6,-30.3,-64.9,-46,-50.9,-54.7C-36.9,-63.4,-19.6,-65.1,-1.5,-63.2C16.6,-61.3,33.9,-81,47.7,-72.6Z"
-                  transform="translate(106 102) scale(0.95)"
-                />
-              </svg>
+                  <defs>
+                    <linearGradient id="heroRightBlobBack" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#8B5CF6" />
+                      <stop offset="100%" stopColor="#6D28D9" />
+                    </linearGradient>
+                    <linearGradient id="heroRightBlobFront" x1="20%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#7C3AED" />
+                      <stop offset="100%" stopColor="#4C1D95" />
+                    </linearGradient>
+                  </defs>
+                  {/* Lighter Lavender-Violet Layer */}
+                  <path
+                    fill="url(#heroRightBlobBack)"
+                    opacity="0.85"
+                    d="M44.6,-69.8C57.9,-62.3,68.8,-50.1,75.4,-35.9C82,-21.7,84.3,-5.5,81.4,9.8C78.5,25.1,70.4,39.5,59.1,51.2C47.8,62.9,33.3,71.9,17.3,76.3C1.3,80.7,-16.2,80.5,-31.8,74.1C-47.4,67.7,-61.1,55.1,-70.3,39.7C-79.5,24.3,-84.2,6.1,-80.7,-10.7C-77.2,-27.5,-65.5,-42.9,-51.4,-50.6C-37.3,-58.3,-20.8,-58.3,-4.1,-53.2C12.6,-48.1,31.3,-77.3,44.6,-69.8Z"
+                    transform="translate(96 98) scale(1.02)"
+                  />
+                  {/* Deeper Indigo-Violet Layer */}
+                  <path
+                    fill="url(#heroRightBlobFront)"
+                    opacity="0.92"
+                    d="M47.7,-72.6C61.5,-64.2,72.2,-50.5,78.5,-35.1C84.8,-19.7,86.7,-2.6,83.1,13.4C79.5,29.4,70.4,44.3,58.1,55.9C45.8,67.5,30.3,75.8,13.6,79.4C-3.1,83,-21,81.9,-36.8,74.8C-52.6,67.7,-66.3,54.6,-74.2,38.7C-82.1,22.8,-84.2,4.1,-79.9,-13.1C-75.6,-30.3,-64.9,-46,-50.9,-54.7C-36.9,-63.4,-19.6,-65.1,-1.5,-63.2C16.6,-61.3,33.9,-81,47.7,-72.6Z"
+                    transform="translate(106 102) scale(0.95)"
+                  />
+                </svg>
 
-              {/* Main Glass Showcase Card */}
-              <div className="relative rounded-2xl bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.08)] overflow-hidden hover:-translate-y-1 transition-transform duration-500">
-                {/* Window Top Navigation Bar */}
-                <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-100 bg-slate-50/60">
-                  <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded-full bg-rose-400 inline-block" />
-                    <span className="w-3 h-3 rounded-full bg-amber-400 inline-block" />
-                    <span className="w-3 h-3 rounded-full bg-emerald-400 inline-block" />
-                    <span className="ml-2 text-xs font-mono font-medium text-slate-400">
-                      inwebz.solutions / preview
-                    </span>
+                {/* Main Glass Showcase Card */}
+                <div className="relative rounded-2xl bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.08)] overflow-hidden hover:-translate-y-1 transition-transform duration-500">
+                  {/* Window Top Navigation Bar */}
+                  <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-100 bg-slate-50/60">
+                    <div className="flex items-center gap-2">
+                      <span className="w-3 h-3 rounded-full bg-rose-400 inline-block" />
+                      <span className="w-3 h-3 rounded-full bg-amber-400 inline-block" />
+                      <span className="w-3 h-3 rounded-full bg-emerald-400 inline-block" />
+                      <span className="ml-2 text-xs font-mono font-medium text-slate-400">
+                        inwebz.solutions / preview
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-semibold">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      Live System
+                    </div>
                   </div>
-                  <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-semibold">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    Live System
+
+                  {/* Window Inner Content */}
+                  <div className="p-6 sm:p-7 space-y-5">
+                    {/* Center Obsidian Brand Showcase */}
+                    <div className="relative rounded-xl p-8 bg-gradient-to-br from-[#0c1222] via-[#090e1a] to-[#131b2e] border border-slate-800 text-center flex flex-col items-center justify-center overflow-hidden group">
+                      {/* Matrix Grid */}
+                      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#8B5CF6_1px,transparent_1px)] [background-size:16px_16px] opacity-25" />
+                      <div className="pointer-events-none absolute -top-12 -right-12 w-36 h-36 bg-[#8B5CF6]/20 rounded-full blur-2xl" />
+
+                      {/* Inwebz Logo */}
+                      <div className="relative z-10 py-1">
+                        <Logo
+                          theme="dark"
+                          size="lg"
+                          className="transform group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+
+                      <div className="relative z-10 mt-4 flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-slate-200 text-xs font-mono">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6] animate-ping" />
+                        Engineering What&apos;s Next
+                      </div>
+                    </div>
+
+                    {/* High-Performance Architecture Badges */}
+                    <div className="grid grid-cols-2 gap-3.5">
+                      <div className="p-3.5 rounded-xl bg-slate-50/80 border border-slate-100 flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-lg bg-violet-100 text-[#8B5CF6] flex items-center justify-center shrink-0">
+                          <Zap className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-[11px] font-medium text-slate-500">Performance</div>
+                          <div className="text-sm font-bold text-slate-900 font-heading">99.8% Speed</div>
+                        </div>
+                      </div>
+
+                      <div className="p-3.5 rounded-xl bg-slate-50/80 border border-slate-100 flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0">
+                          <ShieldCheck className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-[11px] font-medium text-slate-500">Security</div>
+                          <div className="text-sm font-bold text-slate-900 font-heading">Enterprise</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Window Inner Content */}
-                <div className="p-6 sm:p-7 space-y-5">
-                  {/* Center Obsidian Brand Showcase */}
-                  <div className="relative rounded-xl p-8 bg-gradient-to-br from-[#0c1222] via-[#090e1a] to-[#131b2e] border border-slate-800 text-center flex flex-col items-center justify-center overflow-hidden group">
-                    {/* Matrix Grid */}
-                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#8B5CF6_1px,transparent_1px)] [background-size:16px_16px] opacity-25" />
-                    <div className="pointer-events-none absolute -top-12 -right-12 w-36 h-36 bg-[#8B5CF6]/20 rounded-full blur-2xl" />
-
-                    {/* Inwebz Logo */}
-                    <div className="relative z-10 py-1">
-                      <Logo
-                        theme="dark"
-                        size="lg"
-                        className="transform group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-
-                    <div className="relative z-10 mt-4 flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-slate-200 text-xs font-mono">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6] animate-ping" />
-                      Engineering What&apos;s Next
-                    </div>
-                  </div>
-
-                  {/* High-Performance Architecture Badges */}
-                  <div className="grid grid-cols-2 gap-3.5">
-                    <div className="p-3.5 rounded-xl bg-slate-50/80 border border-slate-100 flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-lg bg-violet-100 text-[#8B5CF6] flex items-center justify-center shrink-0">
-                        <Zap className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="text-[11px] font-medium text-slate-500">Performance</div>
-                        <div className="text-sm font-bold text-slate-900 font-heading">99.8% Speed</div>
-                      </div>
-                    </div>
-
-                    <div className="p-3.5 rounded-xl bg-slate-50/80 border border-slate-100 flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0">
-                        <ShieldCheck className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="text-[11px] font-medium text-slate-500">Security</div>
-                        <div className="text-sm font-bold text-slate-900 font-heading">Enterprise</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Clickable Floating Bokeh Bubbles & Crisp Dots */}
-              {CARD_BUBBLES.map((item) => (
-                <InteractiveBubble
-                  key={item.id}
-                  item={item}
-                  isStarred={Boolean(starredIds[item.id])}
-                  onToggle={toggleBubble}
-                  className="z-20"
-                />
-              ))}
+                {/* Clickable Floating Bokeh Bubbles & Crisp Dots */}
+                {CARD_BUBBLES.map((item) => (
+                  <InteractiveBubble
+                    key={item.id}
+                    item={item}
+                    isStarred={Boolean(starredIds[item.id])}
+                    onToggle={toggleBubble}
+                    className="z-20"
+                  />
+                ))}
               </div>
             </div>
           </FadeIn>
