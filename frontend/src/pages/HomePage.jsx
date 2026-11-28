@@ -8,7 +8,6 @@ import Projects from './Projects';
 import Expertise from './Expertise';
 import Process from './Process';
 import Testimonials from './Testimonials';
-import Faq from './Faq';
 import Contact from './Contact';
 import FinalCta from './FinalCta';
 
@@ -48,13 +47,10 @@ export default function HomePage({ onOpenContact }) {
       {/* 11. TESTIMONIALS */}
       <Testimonials />
 
-      {/* 12. FAQ */}
-      <Faq />
-
-      {/* 13. CONTACT SECTION */}
+      {/* 12. CONTACT SECTION */}
       <Contact />
 
-      {/* 14. FINAL CTA */}
+      {/* 13. FINAL CTA */}
       <FinalCta onGetStarted={scrollToContact} />
     </div>
   );
