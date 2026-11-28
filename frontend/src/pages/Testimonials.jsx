@@ -37,14 +37,18 @@ export default function Testimonials() {
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
         {/* Section Header */}
         <div className="max-w-3xl mb-14 text-left">
-          <div className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#8B5CF6] font-mono flex items-center gap-2 mb-3">
-            <span className="h-1.5 w-6 rounded-full bg-[#8B5CF6] inline-block" />
-            CLIENT PERSPECTIVES
+          <div className="inline-block mb-4">
+            <span className="text-base sm:text-lg font-bold font-heading text-[#090e1a] tracking-tight">
+              Client Perspectives
+            </span>
+            <span className="block h-[2.5px] w-24 bg-[#8B5CF6] rounded-full mt-1.5" />
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-[#090e1a] tracking-tight leading-[1.18]">
+          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold font-heading text-[#090e1a] tracking-tight leading-[1.18]">
             Trust Built Through Collaboration.{' '}
-            <span className="text-[#8B5CF6] font-bold">Success Defined By Results.</span>
+            <span className="block mt-1 text-[#8B5CF6]">
+              Success Defined By Results.
+            </span>
           </h2>
 
           <p className="text-base sm:text-lg text-[#1e293b] font-normal leading-relaxed mt-4">

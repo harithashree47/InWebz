@@ -34,14 +34,18 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
           {/* Left Column: Heading, Description & Contact Details */}
           <div className="lg:col-span-5 space-y-7 text-left">
-            <div className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#8B5CF6] font-mono flex items-center gap-2">
-              <span className="h-1.5 w-6 rounded-full bg-[#8B5CF6] inline-block" />
-              LET'S CREATE SOMETHING EXTRAORDINARY
+            <div className="inline-block">
+              <span className="text-base sm:text-lg font-bold font-heading text-[#090e1a] tracking-tight">
+                Let&apos;s Create Something Extraordinary
+              </span>
+              <span className="block h-[2.5px] w-24 bg-[#8B5CF6] rounded-full mt-1.5" />
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-[#090e1a] tracking-tight leading-[1.18]">
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold font-heading text-[#090e1a] tracking-tight leading-[1.18]">
               Big Ideas Begin With A{' '}
-              <span className="text-[#8B5CF6] font-bold">Simple Conversation.</span>
+              <span className="block mt-1 text-[#8B5CF6]">
+                Simple Conversation.
+              </span>
             </h2>
 
             <p className="text-base sm:text-lg text-[#1e293b] font-normal leading-relaxed">
